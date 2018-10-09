@@ -18,3 +18,15 @@
     margin-left: 20px;
     border-radius: 50px;
 }
+
+.btn-success {
+    color: black;
+    background-color: lemonchiffon;
+    border-color: black;
+}
+
+.hero.is-primary .tabs a {
+    color: #fff;
+    opacity: .9;
+    margin-left: 10px;
+}
