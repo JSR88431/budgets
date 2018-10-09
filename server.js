@@ -8,7 +8,7 @@ var db = require('./models');
 var app = express();
 
 // set our application port
-app.set('port', 9000);
+app.set('port', 9001);
 
 // set morgan to log info about our requests for development use.
 app.use(morgan('dev'));
@@ -22,23 +22,10 @@ app.use(cookieParser());
 
 require("./routes/html-routes.js")(app);
 require("./routes/expenses-routes.js")(app);
+require("./routes/user-routes.js")(app);
 
 require("./routes/user-routes.js")(app);
 
-
-
-
-
-// // initialize express-session to allow us track the logged-in user across sessions.
-// app.use(session({
-//     key: 'user_sid',
-//     secret: 'somerandonstuffs',
-//     resave: false,
-//     saveUninitialized: false,
-//     cookie: {
-//         expires: 600000
-//     }
-// }));
 
 // This middleware will check if user's cookie is still saved in browser and user is not set, then automatically log the user out.
 // This usually happens when you stop your express server after login, your cookie still remains saved in the browser.
