@@ -78,7 +78,7 @@ app.use(session({
             db.User.findOne({ where: { username: username } }).then(function (user) {
                 //console.log(user)
                 if (user === null) {
-                    response.send("No imput. Please try again.");
+                    response.redirect('/../error.html');
 
                 } else {
                 //console.log(user.dataValues.password)
