@@ -7,7 +7,7 @@ module.exports = function (app) {
         console.log(req.body);
 
         db.Budget.create({
-            quantity: req.body.quantity,
+            money: req.body.money,
             source: req.body.source
         }).then(function (dbBudget) {
             res.json(dbBudget);

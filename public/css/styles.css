@@ -16,4 +16,10 @@
     border-color: black;
 }
 
+.budget-item {
+    background-color: lightcoral;
+}
+.expenses-item {
+    background-color: lightblue;
+}
 

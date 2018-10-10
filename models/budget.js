@@ -1,6 +1,6 @@
 module.exports = function(sequelize, DataTypes) {
     var Budget = sequelize.define("Budget", {
-      quantity: {
+      money: {
         type: DataTypes.INTEGER,
         allowNull: false,
         validate: {
