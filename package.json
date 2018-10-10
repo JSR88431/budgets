@@ -20,5 +20,14 @@
     "mysql2": "^1.6.1",
     "pg": "^7.5.0",
     "sequelize": "^4.39.0"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JSR88431/budgets.git"
+  },
+  "bugs": {
+    "url": "https://github.com/JSR88431/budgets/issues"
+  },
+  "homepage": "https://github.com/JSR88431/budgets#readme"
 }
