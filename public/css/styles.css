@@ -2,6 +2,7 @@
 .hero.is-medium .hero-body {
     padding-bottom: 9rem;
     padding-top: 3em;
+    font-family: "Comic Sans MS", cursive, sans-serif;
 }
 
 .img-responsive {
@@ -14,6 +15,21 @@
     color: black;
     background-color: lemonchiffon;
     border-color: black;
+}
+
+.container2 {
+    max-width: auto;
+    width: auto;
+    width: a;
+}
+
+.list-group-item {
+    position: relative;
+    padding: 0.75rem 1.25rem;
+    background-color: #fff;
+    border: 1px solid rgba(0,0,0,0.125);
+    margin: auto;
+    margin-top: 1em;
 }
 
 
