@@ -19,6 +19,7 @@
 </head>
 
 <body>
+
     <section class="hero is-primary is-medium is-bold">
         <div class="hero-head">
             <nav class="navbar">
@@ -47,7 +48,7 @@
                 </div>
             </nav>
         </div>
-        <div class="hero-body">
+        <div class="hero-body" style="margin: auto">
             <div class="container has-text-centered">
 
                 <h3>
@@ -56,33 +57,32 @@
                 <h2 class="subtitle">
                     Enter a new expense
                 </h2>
-                    <div class="row">
-                                <form id="expenses-form">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-10">
-                                                <!--show expenses on page-->
-                                                <input class="new-item form-control amount" placeholder="How much money did you spend?"
-                                                    type="text" />
-                                                <br>
-                                                <input class="new-item form-control description" placeholder="What did you spend it on?"
-                                                    type="text" />
-                                            </div>
-                                            <div class="col-2">
-                                                <button type="submit" class="btn btn-success spend">Spend!</button>
-                                                <button type="enter" class="btn btn-success earn">Add money!!</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-                            </ul>
+                <div class="row">
+                    <form id="expenses-form">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-10">
+                                    <!--show expenses on page-->
+                                    <input class="new-item form-control amount" placeholder="Amount of money" type="text" />
+                                    <br>
+                                    <input class="new-item form-control description" placeholder="Description" type="text" />
+                                </div>
+                                <div class="col-2">
+                                    <button type="submit" class="btn btn-success spend" style="padding-left: 25px;">Spend!</button>
+                                    <button type="enter" class="btn btn-success earn" style="margin-top: 22px">Add
+                                        money!!</button>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    </form>
+                    </ul>
                 </div>
-
-
-
             </div>
+        </div>
+
+
+
+        </div>
         </div>
     </section>
 
@@ -93,13 +93,13 @@
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-6-md">
-                    <span class="expenses-container">
-                        </span>
+            <div class="col-4-md">
+                <span class="expenses-container">
+                </span>
             </div>
-            <div class="col-6-md">
-                    <span class="income-container">
-                        </span>
+            <div class="col-4-md">
+                <span class="income-container">
+                </span>
             </div>
         </div>
     </div>

@@ -11,9 +11,15 @@
     height: auto;
 }
 
-.btn-success {
+.earn {
     color: black;
-    background-color: lemonchiffon;
+    background-color: lightgreen;
+    border-color: black;
+}
+
+.spend {
+    color: black;
+    background-color: lightcoral;
     border-color: black;
 }
 
