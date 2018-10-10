@@ -6,9 +6,9 @@ var db = require('./models');
 
 // invoke an instance of express application.
 var app = express();
-
+var PORT = process.env.PORT || 9001
 // set our application port
-app.set('port', 9001);
+// app.set('port', 9001);
 
 // set morgan to log info about our requests for development use.
 app.use(morgan('dev'));
@@ -32,5 +32,5 @@ require("./routes/user-routes.js")(app);
 
 // start the express server
 db.sequelize.sync({ force: true }).then(function() {
-    app.listen(app.get('port'), () => console.log(`App started on port ${app.get('port')}`));
+    app.listen(PORT, () => console.log(`App started on port ${PORT}`));
 });
