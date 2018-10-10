@@ -1,51 +1,81 @@
+<!DOCTYPE html>
 <html>
-    <head>
-        <title>Login Here</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    </head>
-    <body class="container">
-        <div class="page-header">
-            <h1>Simple Budget</h1>
-        </div>
 
-        <nav class="navbar navbar-default">
-            <div class="container-fluid">
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/signup">Sign Up</a></li>
-                        <li><a href="/dashboard">Dashboard</a></li>
-                    </ul>
-
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="/login">Log In</a></li>
-                        <li><a href="/logout">Log Out</a></li>
-                    </ul>
-                </div><!-- /.navbar-collapse -->
-            </div><!-- /.container-fluid -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login - Free Bulma template</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css" />
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+    
+<div class="hero is-primary is-medium is-bold">
+    <div class="hero-head">
+        <nav class="navbar">
+            <div class="container">
+                <div class="navbar-brand">
+                    <span class="navbar-burger burger" data-target="navbarMenu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+                </div>
+                <div id="navbarMenu" class="navbar-menu">
+                    <div class="navbar-end">
+                        <div class="tabs is-right">
+                            <span class="navbar-item">
+                                <a class="button is-white is-outlined" href="./login.html">
+                                    <span class="icon">
+                                        <i class="fa fa-globe"></i>
+                                    </span>
+                                    <span>Home</span>
+                                </a>
+                                <br>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </nav>
+    </div>
 
-        <div class="container row">
-            <div class="jumbotron col-sm-4 pull-center">
-                <form action="/expenses" method="post">
-                    <div>
-                        <label>Username:</label>
-                        <input type="text" name="username" id="username"/>
+
+<body>
+
+    <section class="hero is-primary is-fullheight">
+        <div class="bg-img">
+            <section class="hero is-primary is-fullheight">
+                <div class="hero-body">
+                    <img class="img-responsive" src="https://cdn-images-1.medium.com/max/1200/1*56D27aV6HKexBFVGXX9Ccw.png" />
+                    <div class="container has-text-centered">
+                        <div class="column is-8 is-offset-2">
+                            <p class="subtitle has-text-black">Sign Up</p>
+                            <div class="box">
+                                <form action="/expenses" method="post">
+                                    <div>
+                                        <label>Username:</label>
+                                        <input type="text" name="username" id="username" />
+                                    </div>
+                                    <div>
+                                        <label>Email:</label>
+                                        <input type="text" name="email" id="email" />
+                                    </div>
+                                    <div>
+                                        <label>Password:</label>
+                                        <input type="password" name="password" id="password" />
+                                    </div>
+                                    <div>
+                                        <input class="btn btn-primary" type="submit" value="Sign Up" />
+                                    </div>
+                                </form>
+                            </div>
                     </div>
-                    <div>
-                        <label>Email:</label>
-                        <input type="text" name="email" id="email"/>
-                    </div>    
-                    <div>
-                        <label>Password:</label>
-                        <input type="password" name="password" id="password"/>
-                    </div>
-                    <div>
-                        <input class="btn btn-primary" type="submit" value="Sign Up"/>
-                    </div>
-                </form>                  
-            </div>          
+                </div>
         </div>
-    </body>
+    </section>
+</body>
+
 </html>

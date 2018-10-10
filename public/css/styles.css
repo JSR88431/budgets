@@ -1,0 +1,19 @@
+
+.hero.is-medium .hero-body {
+    padding-bottom: 9rem;
+    padding-top: 3em;
+}
+
+.img-responsive {
+    width: 50%;
+    border-radius: 50px;
+    height: auto;
+}
+
+.btn-success {
+    color: black;
+    background-color: lemonchiffon;
+    border-color: black;
+}
+
+

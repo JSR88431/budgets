@@ -41,12 +41,16 @@ $(document).ready(function() {
         [
           "<li class='list-group-item expenses-item' style='width:400px''font:20px'>",
           "<span>",
+          "Amount: ",
           expenses.amount, 
           " ",
+          " ",
+          " ",
+          "Spent On: ",
           expenses.description,
           "</span>",
           "<input type='text' class='edit' style='display: none;'>",
-          "<button class='delete btn btn-danger'>x</button>",
+          "<button class='delete'>Delete</button>",
           "</li>"
         ].join("")
       );
