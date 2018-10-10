@@ -1,19 +1,19 @@
 $(document).ready(function () {
-    var income = 0;//variable to hold income
+    var budget = 0;//variable to hold budget
     var expense= 0; //variable to hold expense
     $(".txtA,.txt").blur(function () { //attach event to multiple elements
         $(this).each(function () {//loop through each of them
-            if (!isNaN(this.value) && this.value.length != 0) {
+            if (!isNaN(this.value) && this.value.length !== 0) {
                 if($(this).hasClass('txt')) //if it is expense
                     expense += parseFloat(this.value); //add it to expense
                 else
-                    income+=parseFloat(this.value); //add it to income
+                    budget+=parseFloat(this.value); //add it to budget
             }
         });
         if($(this).hasClass('txt'))
-            $("#sum").html(expense.toFixed(2)); //display based on income or expense
+            $("#sum").html(expense.toFixed(2)); //display based on budget or expense
         else
-            $("#sumA").html(income.toFixed(2));
+            $("#sumA").html(budget.toFixed(2));
         calculateSubstraction();//this remains same
         
         function calculateSubstraction() {

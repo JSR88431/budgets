@@ -63,6 +63,7 @@ $(document).ready(function() {
     }
   
     function insertExpenses(event) {
+      
       event.preventDefault();
       var expenses = {
         amount: $newAmountInput.val().trim(),

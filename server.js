@@ -4,6 +4,7 @@ var cookieParser = require('cookie-parser');
 var morgan = require('morgan');
 var db = require('./models');
 
+
 // invoke an instance of express application.
 var app = express();
 var PORT = process.env.PORT || 9001
@@ -29,6 +30,6 @@ require("./routes/user-routes.js")(app);
 
 
 // start the express server
-db.sequelize.sync({ force: true }).then(function() {
+db.sequelize.sync({ force: false}).then(function() {
     app.listen(PORT, () => console.log(`App started on port ${PORT}`));
 });

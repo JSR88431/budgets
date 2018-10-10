@@ -6,6 +6,7 @@ var bcrypt = require('bcrypt');
 
 module.exports = function (app) {
     app.use(cookieParser());
+    var randomNumber = Math.floor(Math.random() * 10976545678);
 // initialize express-session to allow us track the logged-in user across sessions.
 app.use(session({
     key: 'user_sid',
@@ -37,26 +38,30 @@ app.use(session({
 
     // route for Home-Page
     app.get('/', sessionChecker, (req, res) => {
+         // also set token as a cookie that browser can read
         res.redirect('/login');
     });
 
 
     // route for user signup
-    app.route('/expenses')
+    app.route('/signup')
         .get(sessionChecker, (req, res) => {
             res.sendFile(__dirname + '/public/expenses.html');
         })
         .post((req, res) => {
+            console.log("hello");
             //console.log(req.body);
             //console.log("create user");
             db.User.create({
                 username: req.body.username,
                 email: req.body.email,
-                password: req.body.password
+                password: req.body.password,
+                uuid: randomNumber
             })
                 .then(user => {
+                    res.cookie("user", randomNumber, {expires: new Date(Date.now() + 999999999)});
                     req.session.user = user.dataValues;
-                    res.redirect('/expenses');
+                    res.send(req.session.user);
                 })
                 .catch(error => {
                     //console.log(error)
@@ -71,11 +76,14 @@ app.use(session({
             res.sendFile(__dirname + '/../public/login.html');
         })
         .post((req, response) => {
+             // also set token as a cookie that browser can read
+      response.cookie("user", req.body.username, {expires: new Date(Date.now() + 999999999)});
+      console.log(req.headers.cookie.match(/(?<=user=)[^ ;]*/)[0])
             //console.log(req.body);
             var username = req.body.username,
                 password = req.body.password;
 
-            db.User.findOne({ where: { username: username } }).then(function (user) {
+            db.User.findOne({ where: { username } }).then(function (user) {
                 //console.log(user)
                 if (user === null) {
                     response.send("No imput. Please try again.");
@@ -89,7 +97,7 @@ app.use(session({
                     response.send("Wrong Username/Password. Please try again.");
                 } else {
                     req.session.user = user.dataValues;
-                    response.redirect('/expenses');
+                    response.send(req.session.user);
                 }
             })
         }

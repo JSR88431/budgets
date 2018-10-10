@@ -3,6 +3,10 @@ var bcrypt = require('bcrypt');
 
 module.exports = function(sequelize, DataTypes) {
   var User = sequelize.define("User", {
+    uuid: {
+      type: DataTypes.UUID,
+      primaryKey: true
+  },
     username: {
         type: DataTypes.STRING,
         unique: true,
@@ -35,8 +39,8 @@ module.exports = function(sequelize, DataTypes) {
         // Associating Author with Posts
         // When an Author is deleted, also delete any associated Posts
         User.hasMany(models.Expenses, {
-          //foreignKey: 'fk_userid',
-          //sourceKey: 'uuid'
+          foreignKey: 'fk_userid',
+          sourceKey: 'uuid'
         });
       };
       User.prototype.validPassword = async function(password) {

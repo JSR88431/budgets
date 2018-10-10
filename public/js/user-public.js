@@ -1,6 +1,8 @@
+console.log("working");
 $(document).ready(function () {
   
     $("#submitUser").on("click", function (event) {
+      console.log("clocked");
      
       event.preventDefault();
       
@@ -9,16 +11,17 @@ $(document).ready(function () {
         username: $("#username").val().trim(),
         password: $("#password").val().trim(),
       };
-      //console.log(newUser);
+      console.log(newUser);
     
-        $.post("/api/user", newUser)
+        $.post("/signup", newUser)
         .then(function(data){
-          console.log(data)
+          console.log(data);
         })
-        redirect();
+        
       });
-    
-      function redirect(){
+      
+      function redirect(data){
+        console.log(data)
         alert("New User Added");
         window.location.href = "/expenses";
       }

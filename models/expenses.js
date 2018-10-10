@@ -10,22 +10,10 @@ module.exports = function(sequelize, DataTypes) {
       description: {
         type: DataTypes.STRING,
       },
-      // income: {
-      //   type: DataTypes.INTEGER,
-      //   validate: {
-      //     len: [1, 50]
-      //   },
-      // }, 
-      // source: {
-      //   type: DataTypes.STRING,
-      // }
+     
     });
     Expenses.associate = function(models){
-        Expenses.belongsTo(models.User, {
-            foreignKey: {
-              //allowNull: false
-            }
-        })
+        Expenses.belongsTo(models.User);
     }
     return Expenses;
   };
