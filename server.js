@@ -28,10 +28,14 @@ require("./routes/income-routes.js")(app);
 require("./routes/user-routes.js")(app);
 
 
-// This middleware will check if user's cookie is still saved in browser and user is not set, then automatically log the user out.
-// This usually happens when you stop your express server after login, your cookie still remains saved in the browser.
+
 
 // start the express server
+<<<<<<< HEAD
 db.sequelize.sync({ force: true }).then(function() {
     app.listen(PORT, () => console.log(`App started on port ${PORT}`));
+=======
+db.sequelize.sync({ force: false }).then(function() {
+    app.listen(app.get('port'), () => console.log(`App started on port ${app.get('port')}`));
+>>>>>>> budget
 });

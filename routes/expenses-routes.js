@@ -57,8 +57,8 @@ module.exports = function(app) {
       where: {
         id: req.params.id
       }
-    }).then(function(dbBudget) {
-      res.json(dbBudget);
+    }).then(function(dbSum) {
+      res.json(dbSum);
     });
   });
 };
