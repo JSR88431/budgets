@@ -49,7 +49,7 @@ $(document).ready(function() {
           "Spent On: ",
           expenses.description,
           "</span>",
-          "<input type='text' class='edit' style='display: none;'>",
+          "<input type='text' class='edit' style='display: none;' /n>",
           "<button class='delete'>Delete</button>",
           "</li>"
         ].join("")
