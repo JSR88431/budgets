@@ -33,9 +33,14 @@
 }
 
 .budget-item {
-    background-color: lightcoral;
+    background-color: lightgreen;
+    margin-left: 80px;
+    margin-right: 80px;
 }
 .expenses-item {
-    background-color: lightblue;
+    background-color: lightcoral;
+    margin-left: 80px;
+    margin-right: 80px;
+
 }
 
