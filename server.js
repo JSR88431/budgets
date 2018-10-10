@@ -6,6 +6,7 @@ var db = require('./models');
 
 // invoke an instance of express application.
 var app = express();
+var PORT = process.env.PORT || 9001;
 
 // set our application port
 app.set('port', 9001);
