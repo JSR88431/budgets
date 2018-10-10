@@ -31,11 +31,6 @@ require("./routes/user-routes.js")(app);
 
 
 // start the express server
-<<<<<<< HEAD
 db.sequelize.sync({ force: true }).then(function() {
     app.listen(PORT, () => console.log(`App started on port ${PORT}`));
-=======
-db.sequelize.sync({ force: false }).then(function() {
-    app.listen(app.get('port'), () => console.log(`App started on port ${app.get('port')}`));
->>>>>>> budget
 });
