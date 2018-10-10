@@ -49,13 +49,9 @@ $(document).ready(function() {
           "Spent On: ",
           expenses.description,
           "</span>",
-<<<<<<< HEAD
           "<input type='text' class='edit' style='display: none;' /n>",
-          "<button class='delete'>Delete</button>",
-=======
           "<input type='text' class='edit' style='display: none;'>",
           "<button class='delete byeExpense'>Delete</button>",
->>>>>>> idk
           "</li>"
         ].join("")
       );
