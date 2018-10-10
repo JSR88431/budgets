@@ -1,7 +1,7 @@
 var db = require("../models");
 var session = require('express-session');
 var cookieParser = require('cookie-parser');
-
+var bcrypt = require('bcrypt');
 
 
 module.exports = function (app) {
@@ -17,6 +17,7 @@ app.use(session({
     }
 }));
     app.use((req, res, next) => {
+        console.log('req checker', req.cookies,req.session)
         if (req.cookies.user_sid && !req.session.user) {
             res.clearCookie('user_sid');
         }
@@ -46,8 +47,8 @@ app.use(session({
             res.sendFile(__dirname + '/public/expenses.html');
         })
         .post((req, res) => {
-            console.log(req.body);
-            console.log("create user");
+            //console.log(req.body);
+            //console.log("create user");
             db.User.create({
                 username: req.body.username,
                 email: req.body.email,
@@ -58,7 +59,7 @@ app.use(session({
                     res.redirect('/expenses');
                 })
                 .catch(error => {
-                    console.log(error)
+                    //console.log(error)
                     res.redirect('/expenses');
                 });
         });
@@ -67,21 +68,31 @@ app.use(session({
     // route for user Login
     app.route('/login')
         .get(sessionChecker, (req, res) => {
-            res.sendFile(__dirname + '/public/login.html');
+            res.sendFile(__dirname + '/../public/login.html');
         })
-        .post((req, res) => {
+        .post((req, response) => {
+            //console.log(req.body);
             var username = req.body.username,
                 password = req.body.password;
 
             db.User.findOne({ where: { username: username } }).then(function (user) {
-                if (!user) {
-                    res.redirect('/login');
-                } else if (!user.validPassword(password)) {
-                    res.redirect('/login');
+                //console.log(user)
+                if (user === null) {
+                    response.send("No imput. Please try again.");
+
+                } else {
+                //console.log(user.dataValues.password)
+                //bcrypt.compare("user_sid", function(err, res) {
+                bcrypt.compare(password,user.dataValues.password, function(err, res) {
+                    //console.log(res)
+                 if (res !== true) {
+                    response.send("Wrong Username/Password. Please try again.");
                 } else {
                     req.session.user = user.dataValues;
-                    res.redirect('/dashboard');
+                    response.redirect('/expenses');
                 }
+            })
+        }
             });
         });
 
