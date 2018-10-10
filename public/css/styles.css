@@ -32,4 +32,10 @@
     margin-top: 1em;
 }
 
+.budget-item {
+    background-color: lightcoral;
+}
+.expenses-item {
+    background-color: lightblue;
+}
 

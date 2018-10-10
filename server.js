@@ -22,9 +22,7 @@ app.use(cookieParser());
 
 require("./routes/html-routes.js")(app);
 require("./routes/expenses-routes.js")(app);
-require("./routes/user-routes.js")(app);
-require("./routes/income-routes.js")(app);
-
+require("./routes/budget-routes.js")(app);
 require("./routes/user-routes.js")(app);
 
 

@@ -2,7 +2,7 @@ $(document).ready(function() {
     var $newAmountInput = $("input.amount");
     var $newDescriptionInput = $("input.description");
     var $newContainer = $(".expenses-container");
-    $(document).on("click", "button.delete", deleteExpenses);
+    $(document).on("click", ".byeExpense", deleteExpenses);
     $(document).on("submit", "#expenses-form", insertExpenses);
   
     var expenses = [];
@@ -49,8 +49,13 @@ $(document).ready(function() {
           "Spent On: ",
           expenses.description,
           "</span>",
+<<<<<<< HEAD
           "<input type='text' class='edit' style='display: none;' /n>",
           "<button class='delete'>Delete</button>",
+=======
+          "<input type='text' class='edit' style='display: none;'>",
+          "<button class='delete byeExpense'>Delete</button>",
+>>>>>>> idk
           "</li>"
         ].join("")
       );
