@@ -52,7 +52,8 @@ app.use(session({
             db.User.create({
                 username: req.body.username,
                 email: req.body.email,
-                password: req.body.password
+                password: req.body.password,
+                
             })
                 .then(user => {
                     req.session.user = user.dataValues;

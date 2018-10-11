@@ -43,7 +43,7 @@ module.exports = function(app) {
   app.post("/api/expenses", function(req, res) {
     db.Expenses.create({
       money: req.body.money,
-      source: req.body.source
+      source: req.body.source,
     }).then(function(dbExpenses) {
       res.json(dbExpenses);
     })
@@ -55,7 +55,7 @@ module.exports = function(app) {
   app.delete("/api/expenses/:id", function(req, res) {
     db.Expenses.destroy({
       where: {
-        id: req.params.id
+        id: req.params.id,
       }
     }).then(function(dbSum) {
       res.json(dbSum);

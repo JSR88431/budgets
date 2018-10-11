@@ -5,7 +5,6 @@ module.exports = function (app) {
 
     app.post("/api/budget", function (req, res) {
         console.log(req.body);
-
         db.Budget.create({
             money: req.body.money,
             source: req.body.source
@@ -18,7 +17,8 @@ module.exports = function (app) {
     });
 
     app.get("/api/budget", function (req, res) {
-        db.Budget.findAll({}).then(function (dbBudget) {
+        db.Budget.findAll({
+        }).then(function (dbBudget) {
             res.json(dbBudget);
         });
     });
